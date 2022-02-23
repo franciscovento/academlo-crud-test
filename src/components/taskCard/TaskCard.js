@@ -1,18 +1,36 @@
 import './taskCard.css';
 import editIcon from '../../assets/edit-2 1.svg'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import dropdownIcon from '../../assets/down-arrow.png'
+import axios from 'axios';
+import { UserContext } from '../../context/userContext';
 
 
 const TaskCard = ({name, status_id, description, id, handleEdit}) => {
 
   
-  
+  const { userLogged } = useContext(UserContext)
   const [statusValue, setStatusValue] = useState(status_id)
   const [statusColor, setStatusColor] = useState("red");
 
-  const statusChangue = async  (e) => {
+
+  
+  const statusChangue = (e) => {
     setStatusValue(e.target.value)
+    const status = +e.target.value;
+    
+
+    const postData = async () => {
+      const resp = await axios.post(`https://tasks-crud.academlo.com/api/tasks/${id}/status/${status}`, {}, {
+        headers: {
+          'Authorization': `Bearer ${userLogged}`,
+          'Content-Type': 'application/json'
+        },
+      })
+      return resp.data;
+    }
+
+    postData();
   }
 
   useEffect(() => {

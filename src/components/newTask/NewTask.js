@@ -6,10 +6,10 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 
 
-const NewTask = ({getInfo}) => {
+const NewTask = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const { setToggle, userLogged } = useContext(UserContext);
+  const { setToggle, userLogged, setApiInfo } = useContext(UserContext);
 
   
   const onSubmit = data => {
@@ -25,8 +25,8 @@ const NewTask = ({getInfo}) => {
       
     }
     sendData();
-    getInfo();
-    setToggle((prev) => !prev)
+    setApiInfo((prev) => !prev);
+    setToggle((prev) => !prev);
 
   }
 
