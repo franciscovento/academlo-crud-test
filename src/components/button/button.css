@@ -1,0 +1,10 @@
+.button {
+  padding: 8px 15px;
+  background-color: #2ec76d;
+  border: none;
+  color: white;
+  font-weight: lighter;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,39 @@
+.taskCard {
+  border-top: 1px solid gray;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  padding: 20px;
+}
+
+.taskCard__top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.taskCard__description {
+}
+
+.taskCard__description h4 {
+  color: #d3d3d3;
+  text-transform: uppercase;
+}
+
+.taskCard_select {
+  position: relative;
+  display: inline;
+}
+
+.taskCard_select select {
+  padding: 10px;
+  appearance: none;
+  padding-right: 35px;
+}
+
+.taskCard_select img {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0%;
+  right: 5px;
+}
