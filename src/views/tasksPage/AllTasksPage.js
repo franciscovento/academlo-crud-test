@@ -10,12 +10,14 @@ import NewTask from '../../components/newTask/NewTask';
 
 
 
+
 const AllTasksPage = () => {
 
   const [list, setList] = useState([]); 
   
  
   const { userLogged, toggle } = useContext(UserContext);
+  const [edit, setEdit] = useState(false);
 
   const getInfo = async () =>{
     const data = await fetchData(userLogged);
@@ -23,19 +25,22 @@ const AllTasksPage = () => {
   }
 
    useEffect(() => {
-
-  
    getInfo();
    },[])
+
+   const handleEdit = (id) => {
+     setEdit(true)
+   }
    
   
     
   return (
     <>
     <div className='allTaskPage container-content' >
-     {list.map(x => <TaskCard key={x.id} name={x.name} description={x.description} status_id={x.status_id} id={x.id} />)}
+     {list.map(x => <TaskCard key={x.id} name={x.name} description={x.description} status_id={x.status_id} id={x.id} handleEdit={handleEdit} />)}
     </div>
-    {toggle? <NewTask getInfo={getInfo}  />: ""}
+    {toggle? <NewTask  getInfo={getInfo}  />: ""}
+    
     </>
   )
 }

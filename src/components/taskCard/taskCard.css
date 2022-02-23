@@ -11,6 +11,10 @@
   font-size: 18px;
 }
 
+.taskCard__top img {
+  cursor: pointer;
+}
+
 .taskCard__top h3 {
   margin: 0;
 }
