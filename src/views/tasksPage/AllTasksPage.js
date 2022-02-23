@@ -13,7 +13,7 @@ const AllTasksPage = () => {
   return (
     <>
     <div className='allTaskPage container-content' >
-     {tasks.map(x => <TaskCard key={x.id} name={x.name} description={x.description} status_id={x.status_id} id={x.id} />)}
+     {tasks  && tasks.length > 0 && tasks.map(x => <TaskCard key={x.id} name={x.name} description={x.description} status_id={x.status_id} id={x.id} />)}
     </div>
     {toggle? <NewTask  />: ""}
     </>
