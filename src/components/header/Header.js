@@ -33,7 +33,7 @@ const Header = () => {
           <input type="text" placeholder='Buscar tarea'/>
           <img src={searchIcon} alt="" />
           </div>
-          <button onClick={handleToggle}> + Crear una nueva tarea</button>
+          <button className='mainButton' onClick={handleToggle}> + Crear una nueva tarea</button>
         </div>
       </div>
     </div>

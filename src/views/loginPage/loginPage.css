@@ -30,7 +30,7 @@
   padding: 20px 40px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 280px;
-  height: 400px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
 }
@@ -52,6 +52,12 @@
 .loginPage__Card__Top button:first-child {
   background-color: #2ec76d;
   color: white;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.loginPage__Card__Top button:first-child:hover {
+  background-color: #258d50;
 }
 
 .loginPage__Card__Bottom {

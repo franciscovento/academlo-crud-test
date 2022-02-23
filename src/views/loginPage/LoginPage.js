@@ -1,4 +1,3 @@
-import Button from '../../components/button/Button';
 import './loginPage.css';
 import { useContext } from 'react';
 import { UserContext } from '../../context/userContext'
@@ -34,7 +33,7 @@ const LoginPage = () => {
       </div>
       <div className='loginPage__Card'>
         <div className='loginPage__Card__Top'>
-          <button>Iniciar Sesión</button>
+          <button >Iniciar Sesión</button>
           <button>Registrarme</button>
         </div>
         <div className='loginPage__Card__Bottom'>
@@ -52,7 +51,7 @@ const LoginPage = () => {
               <span>Olvidé mi constraseña</span>
             </div>
             <div className='submitButton'> 
-              <Button type='submit'>Aceptar</Button>
+              <button className='mainButton' type='submit'>Aceptar</button>
               <span>{errors.inValidUser? 'El correo o contrasena no son validos': ""}</span>
           </div>
           </form>
