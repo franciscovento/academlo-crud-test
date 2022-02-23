@@ -1,13 +1,12 @@
 import './taskCard.css';
 import editIcon from '../../assets/edit-2 1.svg'
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import dropdownIcon from '../../assets/down-arrow.png'
-import { UserContext } from '../../context/userContext';
 
 
 const TaskCard = ({name, status_id, description, id, handleEdit}) => {
 
-  const { userLogged } = useContext(UserContext);
+  
   
   const [statusValue, setStatusValue] = useState(status_id)
   const [statusColor, setStatusColor] = useState("red");
@@ -18,13 +17,13 @@ const TaskCard = ({name, status_id, description, id, handleEdit}) => {
 
   useEffect(() => {
     
-    if(statusValue == "null" || statusValue == null)
+    if(statusValue === "null" || statusValue == null)
       setStatusColor("gray")
-    if(statusValue == 1)
+    if(statusValue === "1" || statusValue === 1)
       setStatusColor("#17FF83")
-    if(statusValue == 2)
+    if(statusValue === "2" || statusValue === 2)
       setStatusColor("#46FFF0")
-    if(statusValue == 3)
+    if(statusValue === "3" || statusValue === 3)
       setStatusColor("#FF8235")
     
   },[statusValue])

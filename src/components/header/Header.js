@@ -1,4 +1,3 @@
-import Button from '../button/Button';
 import './header.css';
 import searchIcon from '../../assets/search 1.svg'
 

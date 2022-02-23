@@ -21,7 +21,7 @@ import NewTask from './components/newTask/NewTask';
 
 
 function App() {
-  const { userLogged, toggle } = useContext(UserContext);
+  const { userLogged} = useContext(UserContext);
   
   return (
    

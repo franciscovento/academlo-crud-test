@@ -17,29 +17,28 @@ const AllTasksPage = () => {
   
  
   const { userLogged, toggle } = useContext(UserContext);
-  const [edit, setEdit] = useState(false);
 
-  const getInfo = async () =>{
-    const data = await fetchData(userLogged);
-    setList(data)
-  }
+
+
 
    useEffect(() => {
+    const getInfo = async () =>{
+      const data = await fetchData(userLogged);
+      setList(data)
+    }
    getInfo();
-   },[])
+   },[ userLogged ])
 
-   const handleEdit = (id) => {
-     setEdit(true)
-   }
+  
    
   
     
   return (
     <>
     <div className='allTaskPage container-content' >
-     {list.map(x => <TaskCard key={x.id} name={x.name} description={x.description} status_id={x.status_id} id={x.id} handleEdit={handleEdit} />)}
+     {list.map(x => <TaskCard key={x.id} name={x.name} description={x.description} status_id={x.status_id} id={x.id} />)}
     </div>
-    {toggle? <NewTask  getInfo={getInfo}  />: ""}
+    {toggle? <NewTask  />: ""}
     
     </>
   )
