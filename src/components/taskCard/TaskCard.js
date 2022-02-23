@@ -6,10 +6,10 @@ import axios from 'axios';
 import { UserContext } from '../../context/userContext';
 
 
-const TaskCard = ({name, status_id, description, id, handleEdit}) => {
+const TaskCard = ({name, status_id, description, id}) => {
 
   
-  const { userLogged } = useContext(UserContext)
+  const { userLogged, setToggle } = useContext(UserContext)
   const [statusValue, setStatusValue] = useState(status_id)
   const [statusColor, setStatusColor] = useState("red");
 
@@ -46,11 +46,16 @@ const TaskCard = ({name, status_id, description, id, handleEdit}) => {
     
   },[statusValue])
 
+  const handleEdit =  () => {
+    setToggle(true); 
+  }
+
   return (
+    <>
     <div className='taskCard' style={{borderBottom: `4px solid ${statusColor}`}}>
       <div className='taskCard__top'>
         <h3>{name}</h3>
-        <img onClick={() => handleEdit(id)} src={editIcon} alt="" />
+        <img onClick={() => handleEdit()} src={editIcon} alt="" />
       </div>
       <hr />
       <div className='taskCard__description'>
@@ -67,6 +72,7 @@ const TaskCard = ({name, status_id, description, id, handleEdit}) => {
       <img src={dropdownIcon} alt="" />
       </div>
     </div>
+    </>
   )
 }
 

@@ -5,7 +5,7 @@
   height: 100vh;
   overflow: hidden;
   background-color: rgba(133, 133, 133, 0.527);
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
