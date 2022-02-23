@@ -1,4 +1,19 @@
 .header {
+  padding-bottom: 50px;
+}
+.header__top {
+  padding-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__top svg {
+  border-radius: 50%;
+  background-color: black;
+  padding: 5px;
+}
+
+.header__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,6 +23,7 @@
 .header__title {
   font-size: 50px;
   font-weight: bold;
+  margin: 10px 0;
 }
 
 .header__right {

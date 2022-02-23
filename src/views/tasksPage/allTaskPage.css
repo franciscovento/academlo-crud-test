@@ -1,0 +1,7 @@
+.allTaskPage {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 21rem));
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 50px;
+}

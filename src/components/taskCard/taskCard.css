@@ -11,12 +11,19 @@
   font-size: 18px;
 }
 
+.taskCard__top h3 {
+  margin: 0;
+}
+
 .taskCard__description {
 }
 
 .taskCard__description h4 {
   color: #d3d3d3;
   text-transform: uppercase;
+  margin: 15px 0 0 0;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .taskCard_select {
