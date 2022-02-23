@@ -356,6 +356,7 @@ template {
 .container-content {
   max-width: 1200px;
   margin: auto;
+  padding: 0 20px;
 }
 
 @font-face {

@@ -1,0 +1,108 @@
+.loginPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* background: url('../../assets/Vector\ 4.svg') top left no-repeat,
+    url('../../assets/Vector\ 3.svg') bottom right no-repeat; */
+}
+
+.loginPage__imgTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 10%; */
+}
+
+.loginPage__imgBottom {
+  position: absolute;
+  width: 50%;
+  /* bottom: 0; */
+  /* right: 0; */
+}
+
+.loginPage__Card {
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  padding: 20px 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 280px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginPage__Card__Top {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  /* flex-wrap: wrap; */
+}
+
+.loginPage__Card__Top button {
+  border: none;
+  padding: 10px 30px;
+  font-size: 12px;
+  font-weight: 300;
+  flex-grow: 1;
+}
+.loginPage__Card__Top button:first-child {
+  background-color: #2ec76d;
+  color: white;
+}
+
+.loginPage__Card__Bottom {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loginPage__Card__Bottom p {
+  margin: 0px 0px 10px 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* !! Syles for form */
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14px;
+  color: #979696;
+}
+
+.Form .email {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Form .email input {
+  padding: 5px;
+}
+
+.Form .password {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Form .password input {
+  padding: 5px;
+}
+
+.Form .password span {
+  font-size: 12px;
+  text-align: end;
+}
+
+.submitButton button {
+  width: 100%;
+  margin-top: 10px;
+}

@@ -3,7 +3,7 @@ import editIcon from '../../assets/edit-2 1.svg'
 import { useEffect, useState } from 'react';
 import dropdownIcon from '../../assets/down-arrow.png'
 
-const TaskCard = ({name = 'Tarea 1', status_id = 1, description = ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora doloribus minima commodi dicta id. Eum, est. Delectus non necessitatibus recusandae consectetur ducimus alias ratione nulla'}) => {
+const TaskCard = ({name = 'Tarea 1', status_id = 1, description = ' Lorem ipsum'}) => {
 
   const [statusValue, setStatusValue] = useState([status_id])
   const [statusColor, setStatusColor] = useState("red");
