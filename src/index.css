@@ -358,6 +358,20 @@ template {
   margin: auto;
   padding: 0 20px;
 }
+.input {
+  background-color: rgb(245, 245, 245);
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  border: solid 0.5px gray;
+  transition: border 0.5s ease-in-out;
+}
+
+.input:focus {
+  outline: none;
+  border: 0.5px solid #2ec76d;
+}
 
 @font-face {
   font-family: 'Helvetica';

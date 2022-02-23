@@ -42,12 +42,12 @@ const LoginPage = () => {
           <form onSubmit={handleSubmit(onSubmit)} className='Form' action="">
             <div className='email'>
               <label htmlFor="">Correo Electrónico</label>
-              <input name ='email' type="email" placeholder='Escriba su correo electrónico' {...register("email", {required: true})} />
+              <input className='input' name ='email' type="email" placeholder='Escriba su correo electrónico' {...register("email", {required: true})} />
               {errors.email ? errorMessage : ''}
             </div>
             <div className='password'>
               <label htmlFor="">Constraseña</label>
-              <input name = 'password' type="password" placeholder='Al menos 8 caractéres' {...register("password", {required: true})} />
+              <input className='input' name = 'password' type="password" placeholder='Al menos 8 caractéres' {...register("password", {required: true})} />
               {errors.password ? errorMessage : ''}
               <span>Olvidé mi constraseña</span>
             </div>

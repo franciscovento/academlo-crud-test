@@ -83,18 +83,10 @@
   gap: 5px;
 }
 
-.Form .email input {
-  padding: 5px;
-}
-
 .Form .password {
   display: flex;
   flex-direction: column;
   gap: 5px;
-}
-
-.Form .password input {
-  padding: 5px;
 }
 
 .Form .password span {

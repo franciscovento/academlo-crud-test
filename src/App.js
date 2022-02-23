@@ -16,12 +16,13 @@ import { Routes, Route, Navigate  } from 'react-router-dom';
 // Import context
 import { useContext } from 'react';
 import { UserContext } from './context/userContext'
+import NewTask from './components/newTask/NewTask';
 
 
 
 function App() {
-  const { userLogged } = useContext(UserContext);
-  console.log(userLogged)
+  const { userLogged, toggle } = useContext(UserContext);
+  
   return (
    
     <div className="App">
@@ -29,6 +30,7 @@ function App() {
           <Route path='/' element={ userLogged ? <Navigate to="/login" /> : <Navigate to ="/allTask"/> } /> 
           <Route path='/login' element={ userLogged? <Navigate to="/allTask"/> : <LoginPage />} /> 
           <Route path='/allTask' element={userLogged? <><Header /><AllTasksPage /></> : <Navigate to='/login' />} />
+          <Route path='/newTask' element={ userLogged? <NewTask /> : <Navigate to='/login' />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
     </div>

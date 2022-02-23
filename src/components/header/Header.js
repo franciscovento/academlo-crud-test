@@ -7,11 +7,15 @@ import { useContext } from 'react';
 
 const Header = () => {
 
-  const { setUserLogged } = useContext(UserContext);
+  const { setUserLogged, setToggle } = useContext(UserContext);
 
   const handleLoggout = () => {
     localStorage.clear();
     setUserLogged(undefined);
+  }
+
+  const handleToggle = () => {
+    setToggle(prev => !prev)
   }
 
   return (
@@ -30,7 +34,7 @@ const Header = () => {
           <input type="text" placeholder='Buscar tarea'/>
           <img src={searchIcon} alt="" />
           </div>
-          <Button> + Crear una nueva tarea</Button>
+          <button onClick={handleToggle}> + Crear una nueva tarea</button>
         </div>
       </div>
     </div>

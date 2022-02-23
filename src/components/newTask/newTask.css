@@ -1,0 +1,60 @@
+.newTask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(133, 133, 133, 0.527);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.newTask__Card {
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  padding: 20px 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 280px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.newTask__Name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.newTask__Description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.newTask__Buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newTask__Buttons button {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.newTask__closeIcon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.newTask__closeIcon {
+  cursor: pointer;
+}

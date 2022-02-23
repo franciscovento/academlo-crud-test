@@ -1,20 +1,25 @@
 import './taskCard.css';
 import editIcon from '../../assets/edit-2 1.svg'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import dropdownIcon from '../../assets/down-arrow.png'
+import { UserContext } from '../../context/userContext';
 
-const TaskCard = ({name = 'Tarea 1', status_id = 1, description = ' Lorem ipsum'}) => {
 
+const TaskCard = ({name = 'Tarea 1', status_id = 1, description = ' Lorem ipsum', id}) => {
+
+  const { userLogged } = useContext(UserContext);
+  console.log(userLogged);
   const [statusValue, setStatusValue] = useState(status_id)
   const [statusColor, setStatusColor] = useState("red");
 
-  const statusChangue = (e) => {
-    setStatusValue(e.target.value);
+  const statusChangue = async  (e) => {
+    setStatusValue(e.target.value)
   }
 
   useEffect(() => {
 
-    if(statusValue == "null")
+    
+    if(statusValue == "null" || statusValue == null)
       setStatusColor("gray")
     if(statusValue == 1)
       setStatusColor("#17FF83")
@@ -37,11 +42,11 @@ const TaskCard = ({name = 'Tarea 1', status_id = 1, description = ' Lorem ipsum'
       <p>{description}</p>
       </div>
       <div className='taskCard_select'>
-      <select onChange={statusChangue} name="" id="">
-        <option value='null' selected={ status_id == 'null'? true: false}>selecciona status</option>
-        <option value="1" selected={status_id == 1 ? true : false} >Terminada</option>
-        <option value="2" selected={status_id == 2 ? true : false}>Iniciada</option>
-        <option value="3" selected={status_id == 3 ? true : false}>En pausa</option>
+      <select onChange={statusChangue} name="" id="" defaultValue={status_id}>
+        <option value='null'>selecciona status</option>
+        <option value="1"  >Terminada</option>
+        <option value="2" >Iniciada</option>
+        <option value="3" >En pausa</option>
       </select>
       <img src={dropdownIcon} alt="" />
       </div>
