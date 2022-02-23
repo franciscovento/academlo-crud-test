@@ -11,25 +11,28 @@ import Header from './components/header/Header';
 
 // Import Router v6
 import { Routes, Route, Navigate  } from 'react-router-dom';
-import { useState } from 'react';
 
-import UserProvider from './context/userContext';
+
+// Import context
+import { useContext } from 'react';
+import { UserContext } from './context/userContext'
+
+
 
 function App() {
-
-  const [logged, setLogged ] = useState(false)
-
+  const { userLogged } = useContext(UserContext);
+  console.log(userLogged)
   return (
-    <UserProvider>
+   
     <div className="App">
         <Routes>  
-          <Route path='/' element={ logged ? <Navigate to="/login" /> : <Navigate to ="/allTask"/> } /> 
-          <Route path='/login' element={ logged? <Navigate to="/allTask"/> : <LoginPage />} /> 
-          <Route path='/allTask' element={logged? <><Header /><AllTasksPage /></> : <Navigate to='/login' />} />
+          <Route path='/' element={ userLogged ? <Navigate to="/login" /> : <Navigate to ="/allTask"/> } /> 
+          <Route path='/login' element={ userLogged? <Navigate to="/allTask"/> : <LoginPage />} /> 
+          <Route path='/allTask' element={userLogged? <><Header /><AllTasksPage /></> : <Navigate to='/login' />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
     </div>
-    </UserProvider>
+   
   );
 }
 

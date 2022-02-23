@@ -2,12 +2,29 @@ import Button from '../../components/button/Button';
 import './loginPage.css';
 import { useContext } from 'react';
 import { UserContext } from '../../context/userContext'
+import { useForm } from "react-hook-form";
+import { userLoggin } from '../../utlis/fetchData';
 
 const LoginPage = () => {
-
-  const ctx = useContext(UserContext)
-  console.log(ctx)
   
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {  setUserLogged } = useContext(UserContext)
+  
+  const onSubmit = (data) => {
+    const { email, password } = data; 
+    const getToken = async () => {
+      const token = await userLoggin(email, password);
+      if(token){
+        localStorage.setItem('token', token);
+        setUserLogged(token);   
+      }  
+    }
+    getToken()
+  }
+
+  const errorMessage = <p style={{color: '#FF4949', fontSize:'10px'}}>*Este campo es obligatorio</p>;
+
+
   return (
     <div className="loginPage">
       <div className='loginPage__imgTop'>
@@ -22,18 +39,21 @@ const LoginPage = () => {
         </div>
         <div className='loginPage__Card__Bottom'>
           <p>Inicio de Sesión</p>
-          <form className='Form' action="">
+          <form onSubmit={handleSubmit(onSubmit)} className='Form' action="">
             <div className='email'>
               <label htmlFor="">Correo Electrónico</label>
-              <input type="text" placeholder='Escriba su correo electrónico' />
+              <input name ='email' type="email" placeholder='Escriba su correo electrónico' {...register("email", {required: true})} />
+              {errors.email ? errorMessage : ''}
             </div>
             <div className='password'>
               <label htmlFor="">Constraseña</label>
-              <input type="text" placeholder='Al menos 8 caractéres' />
+              <input name = 'password' type="password" placeholder='Al menos 8 caractéres' {...register("password", {required: true})} />
+              {errors.password ? errorMessage : ''}
               <span>Olvidé mi constraseña</span>
             </div>
             <div className='submitButton'> 
               <Button type='submit'>Aceptar</Button>
+              <span>{errors.inValidUser? 'El correo o contrasena no son validos': ""}</span>
           </div>
           </form>
         </div>
