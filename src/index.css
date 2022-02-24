@@ -415,3 +415,15 @@ template {
 * {
   font-family: 'Helvetica';
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #cccccc;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #29c269;
+  border-radius: 0px;
+}
