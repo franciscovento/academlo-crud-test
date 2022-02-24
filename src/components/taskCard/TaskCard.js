@@ -9,7 +9,7 @@ import { UserContext } from '../../context/userContext';
 const TaskCard = ({name, status_id, description, id}) => {
 
   
-  const { userLogged, setToggle } = useContext(UserContext)
+  const { userLogged, setToggle, setApiInfo } = useContext(UserContext)
   const [statusValue, setStatusValue] = useState(status_id)
   const [statusColor, setStatusColor] = useState("red");
 
@@ -50,6 +50,16 @@ const TaskCard = ({name, status_id, description, id}) => {
     setToggle(true); 
   }
 
+  const handleDelete = async () => {
+    await axios.delete(`https://tasks-crud.academlo.com/api/tasks/${id}`, {
+      headers: {
+        'Authorization': `Bearer ${userLogged}`
+      }
+    })
+
+    setApiInfo(prev => (!prev));
+  }
+
   return (
     <>
     <div className='taskCard' style={{borderBottom: `4px solid ${statusColor}`}}>
@@ -71,6 +81,7 @@ const TaskCard = ({name, status_id, description, id}) => {
       </select>
       <img src={dropdownIcon} alt="" />
       </div>
+      <button className='TaskCard__delete' onClick={handleDelete} >Delete</button>
     </div>
     </>
   )

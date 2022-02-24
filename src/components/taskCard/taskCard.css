@@ -19,9 +19,6 @@
   margin: 0;
 }
 
-.taskCard__description {
-}
-
 .taskCard__description h4 {
   color: #d3d3d3;
   text-transform: uppercase;
@@ -47,4 +44,22 @@
   position: absolute;
   top: 0%;
   right: 5px;
+}
+
+.taskCard button {
+  float: right;
+  border: none;
+  background-color: #0f0f2d;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.TaskCard__delete {
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.TaskCard__delete:hover {
+  background-color: red;
 }

@@ -356,7 +356,7 @@ template {
 .container-content {
   max-width: 1200px;
   margin: auto;
-  padding: 0 20px;
+  padding: 20px 20px;
 }
 .input {
   background-color: rgb(245, 245, 245);
